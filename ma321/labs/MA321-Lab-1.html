@@ -1,0 +1,492 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>MA321 Lab 1</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #fefefe;
+}
+body {
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
+}
+
+h1 {
+	font-size:3em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
+}
+
+h1, 
+h2, 
+h3{
+	text-align: center;
+}
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+p .md-image:only-child{
+    width: auto;
+    text-align: inherit;
+}
+
+.twocols{
+   column-count: 2; 
+   column-gap: 10px;
+}
+
+@media print, (overflow-block: paged) or (overflow-block: optional-paged)
+{
+  /* Move top-level headings to a new page on the right-hand side: */
+  h1
+  {
+    page-break-before: right; /* CSS 2 */
+    break-before: recto;      /* CSS 3+, 
+      also works for languages written and paginated right-to-left */
+  }
+  /* Override the previous ruleset for the very first heading: */
+  h1:first-of-type,
+  section > h1:first-child
+  {
+    page-break-before: avoid; /* CSS 2 */
+    break-before: avoid;      /* CSS 3+ */
+  }
+  /* Force second-level headings to begin in a new column or
+     possiblyon a new page if it was in the last of multiple columns otherwise: */
+  h2
+  {
+    break-before: column;
+  }
+  /* Headings should not be the last paragraph on a page: */
+  h1, h2, h3, h4, h5, h6
+  {
+    page-break-after: avoid;
+  }
+  /* Consecutive headings with deepening level should not be split across pages: */
+  h1+h2, h2+h3, h3+h4, h4+h5, h5+h6
+  {
+    page-break-before: avoid;
+  }
+}
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = ''><h2><a name="getting-start" class="md-header-anchor"></a><span>Getting Start</span></h2><ul><li><span>When you run the Microsoft Excel app, you likely will see the following startup screen.</span></li></ul><p><img src="img/Excel-StartScreen.png" alt="Excel start up screen" style="zoom: 50%;" /></p><ul><li><span>After open an black workbook, the screen with a grid you see is a worksheet. Worksheets are part of a workbook with a file name like book1.xlsx, but you can rename it to any file name when you save your file.</span></li></ul><p><img src="img/Outlook-of-a-workbook.png" alt="Overview of an Excel workbook" style="zoom: 50%;" /></p><ul><li><p><span>In a worksheet, you will see the following things.</span></p><ul><li><strong><span>Cell</span></strong><span> A cell is a rectangular block in a worksheet. A cell is a storage box that holds information you entered. An active Cell is one that is currently being editing.</span></li><li><strong><span>Columns and Rows</span></strong><span> Columns and rows are used to locate cells.</span></li><li><strong><span>Column and Row headings</span></strong><span> Columns and rows are labeled by letters and numbers which are called headings. Clicking on a heading will select the entire row or column.</span></li><li><strong><span>Ribbon</span></strong><span> Above a workbook is a section of commands and tabs called the Ribbon.</span></li><li><a name="cell_reference"><strong><span>Cell Reference</span></strong></a><span> A cell reference is a combination of the column letter and the row number. For example, A1 refers to the cell located at where column A and row 1 intersect.</span></li><li><strong><span>Formula Bar</span></strong><span> Between the ribbon and column heading, one will find the formula bar. The Formula Bar will display the content of an active cell.</span></li></ul></li></ul><h2><a name="selecting-referring-to-and-formatting-cells" class="md-header-anchor"></a><span>Selecting, Referring to, and Formatting Cells</span></h2><ul><li><p><span>Excel has some formatting options that can be used change the appearance of cells. To format cells, you have to highlight (select) those cells that you want to format.</span></p><ul><li><p><span>To select cells in a rectangular region, first select a cell in a corner of the region, then </span><strong><span>either</span></strong></p><ul><li><span>hold the left-click button of the mouse and drag to the diagonal corner of the region, </span><strong><span>or</span></strong></li><li><span>click and hold the </span><code>Shift</code><span> key and the keyboard and then select the cell in the diagonal corner of the region.</span></li></ul></li><li><p><span>To select several cells in different regions, you can click hold the </span><code>Ctrl</code><span> (</span><code>Cmd</code><span> on Mac) key on the keyboard and then select the cells using the mouse.</span></p></li></ul><p><strong><span>Superuser Tips:</span></strong><span> Holding </span><code>Ctrl</code><span> and using drag to select can select multiple regions.</span></p></li><li><p><span>Cells can be referred using their </span><a href='#cell_reference'><span>references</span></a><span>. In formulas, to refer to multiple cells, you can use the above mentioned selecting method or type in cell references. For cells in a range, Excel uses </span><code>:</code><span> to mean the word &quot;to&quot;. For example,  cells from A1 to A10 can be written as </span><code>A1:A10</code><span> in an Excel formula. For a collections of individual cells, Excel uses  </span><code>,</code><span> to separate them. For example, </span><code>A1,A3,A4,A6</code><span>. </span></p><p><strong><span>Superuser Tips:</span></strong><span> Column and row headings are variables. Excel can automatically produce data in continued blank cells according the formulas (pattern) in previous cells. To tell Excel to fix a column heading or row heading or cell reference in a formula, we add the </span><code>$</code><span> sign in front of the column heading and/or the row heading. For example, </span><code>$A$1</code><span> is an absolute cell reference.</span></p></li><li><p><span>Excel has many built-in functions for formatting cells. You may find those formatting commands in the ribbon. One of the those formatting commands that we will is to merge cells. Note that merging cell only keeps the upper-left value and discords other values.</span></p><p><strong><span>Example:</span></strong><span> To merge the cell </span><code>A1</code><span> to </span><code>B1</code><span> into one cell and center the text, we select those two cells and then click to run the command </span><code>Merge &amp; Center</code><span> under the </span><code>Home</code><span> tab. Suppose that </span><code>A1</code><span> and </span><code>B1</code><span> have the values &quot;Merge&quot; and &quot;cell&quot;, after merging, only the value &quot;Merge&quot; will be kept in the merged cell.</span></p><p><img src="img/Merge-cells.gif" alt="Merge-cells" style="zoom: 67%;" /></p></li></ul><h2><a name="formulas-and-operators" class="md-header-anchor"></a><span>Formulas and Operators</span></h2><ul><li><p><span>A </span><strong><span>formula</span></strong><span> is an expression inside a cell that is used to produce a value. A formula must begin with an equal </span><code>=</code><span> sign which tells Excel to evaluate the expression and produce a value. A formula could be a mathematical expression, cell references, or Excel functions.</span></p></li><li><p><strong><span>Excel functions</span></strong><span> are pre-built formulas in Excel. Here are a few examples</span></p><figure><table><thead><tr><th style='text-align:left;' ><strong><span>Formula</span></strong></th><th style='text-align:left;' ><strong><span>Performance</span></strong></th></tr></thead><tbody><tr><td style='text-align:left;' ><code>average()</code></td><td style='text-align:left;' ><span>Calculate the average of a group of numbers</span></td></tr><tr><td style='text-align:left;' ><code>sum()</code></td><td style='text-align:left;' ><span>Calculate the total of a group of numbers</span></td></tr><tr><td style='text-align:left;' ><code>round()</code></td><td style='text-align:left;' ><span>Round a number</span></td></tr></tbody></table></figure></li><li><p><strong><span>Operators</span></strong><span> are symbols or signs that indicate how calculation should be done in an expression. In Excel, operators includes not only arithmetic operators but also text concatenation, logical and reference operators. For example, the text concatenation of &quot;Tool&quot; and &quot;box&quot; can be done by </span><code>&quot;Tool&quot;&amp;&quot;box&quot;</code><span>. The following are tables of Excel operators by their types.</span></p><ul><li><span>Arithmetic Operators and their order of operations</span></li></ul><figure><table><thead><tr><th style='text-align:center;' ><span>Operator</span></th><th style='text-align:left;' ><span>Description</span></th><th style='text-align:center;' ><span>Order of Operation (smaller number= higher priority)</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><code>%</code></td><td style='text-align:left;' ><span>The percent operator</span></td><td style='text-align:center;' ><span>1</span></td></tr><tr><td style='text-align:center;' ><code>^</code></td><td style='text-align:left;' ><span>The exponentiation operator</span></td><td style='text-align:center;' ><span>1</span></td></tr><tr><td style='text-align:center;' ><code>*</code></td><td style='text-align:left;' ><span>The multiplication operator</span></td><td style='text-align:center;' ><span>2</span></td></tr><tr><td style='text-align:center;' ><code>/</code></td><td style='text-align:left;' ><span>The division operator</span></td><td style='text-align:center;' ><span>2</span></td></tr><tr><td style='text-align:center;' ><code>+</code></td><td style='text-align:left;' ><span>The addition operator</span></td><td style='text-align:center;' ><span>3</span></td></tr><tr><td style='text-align:center;' ><code>-</code></td><td style='text-align:left;' ><span>The subtraction operator</span></td><td style='text-align:center;' ><span>3</span></td></tr></tbody></table></figure><ul><li><p><span>Text concatenation</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Operator</span></th><th style='text-align:left;' ><span>Description</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><code>&amp;</code></td><td style='text-align:left;' ><span>Combine text strings</span></td></tr></tbody></table></figure></li><li><p><span>Logical operators</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Operator</span></th><th style='text-align:left;' ><span>Description</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>=</span></td><td style='text-align:left;' ><span>Equal to</span></td></tr><tr><td style='text-align:center;' ><span>&gt;</span></td><td style='text-align:left;' ><span>Greater than</span></td></tr><tr><td style='text-align:center;' ><span>&lt;</span></td><td style='text-align:left;' ><span>Less than</span></td></tr><tr><td style='text-align:center;' ><span>&gt;=</span></td><td style='text-align:left;' ><span>Greater than or equal to</span></td></tr><tr><td style='text-align:center;' ><span>&lt;=</span></td><td style='text-align:left;' ><span>Less than or equal to</span></td></tr><tr><td style='text-align:center;' ><span>&lt;&gt;</span></td><td style='text-align:left;' ><span>Not equal to</span></td></tr></tbody></table></figure></li><li><p><span>Reference Operators</span></p><figure><table><thead><tr><th style='text-align:center;' ><span>Operator</span></th><th style='text-align:left;' ><span>Description</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>:</span></td><td style='text-align:left;' ><span>Range operator (defines a reference to a range of cells)</span></td></tr><tr><td style='text-align:center;' ><span>,</span></td><td style='text-align:left;' ><span>Union operator (combines two references into a single reference)</span></td></tr><tr><td style='text-align:center;' ><span>(space)</span></td><td style='text-align:left;' ><span>Intersection operator (returns a reference to the intersection of two ranges)</span></td></tr></tbody></table></figure></li></ul></li></ul><h2><a name="autofill" class="md-header-anchor"></a><span>Autofill</span></h2><p><span>Autofill helps to generate data for consecutive cells using formula(s) (pattern) in previous cells. To use autofill, select the cell(s) that have formulas (pattern) that you want to use to autofill other cells. Move the cursor to the lower right corner of the selected region and you will see a black solid plus sigh </span><strong><code>+</code></strong><span>. Drag the plus sign to a nearby cell will autofill a formula/datum.</span></p><p><strong><span>Example:</span></strong><span> Suppose that you want to fill in the first 10 natural numbers in cells A1 to A10. You may enter 1, 2 in A1 and A2 respectively. Then select A1 and A2. Now move the mouse cursor to the lower right corner of the A2 cell and drag the solid plus sign </span><strong><code>+</code></strong><span> to the cell A10 will generate the numbers.</span></p><p><img src="img/Autofill-Example.gif" alt="Autofill-Example" style="zoom: 67%;" /></p><h2><a name="homework-1" class="md-header-anchor"></a><span>Homework 1</span></h2><p><strong><span>Assignment:</span></strong><span> Create a table in Excel with 11 rows and 10 columns that has the following values in it.</span></p><ol start='' ><li><span>Merge the first row in the table and enter the text &quot;First 100 numbers in a 10 by 10 table&quot;.</span></li><li><span>Fill in the first 100 numbers from left to right and top to bottom as shown in the following picture.</span></li></ol><p><strong><span>Requirement:</span></strong><span> You must submit your work in excel using the link in Blackboard.</span></p></div>
+</body>
+</html>
