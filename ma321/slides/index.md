@@ -8,3 +8,6 @@ List of course slides
 - [Lesson 4](Lesson04-Unit-5D.html)
 - [Lesson 5](Lesson05-Unit-5E.html)
 - [Lesson 6](Lesson06-Unit-6A.html)
+- [Lesson 7](Lesson07-Unit-6B.html)
+- [Lesson 8](Lesson08-Unit-6C.html)
+- [Lesson 9](Lesson09-Unit-6D.html)

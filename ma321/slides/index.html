@@ -156,7 +156,6 @@ mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 @media print {
   .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
-  .typora-export h1::after, .typora-export h2::after, .typora-export h3::after, .typora-export h4::after, .typora-export h5::after, .typora-export h6::after { content: ""; display: block; height: 100px; margin-bottom: -100px; }
 }
 
 
@@ -488,10 +487,33 @@ p .md-image:only-child{
     page-break-before: avoid;
   }
 }
+iframe::-webkit-scrollbar{
+  display: none;
+  width: 0px !important;
+  background: transparent;
+}
+
+iframe::-webkit-scrollbar-thumb {
+background: #fafafa;
+}
+
+iframe {
+    object-fit: contain;
+    /* position: absolute; */
+    width: 1080;
+    height: 600px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    border: 0px;
+    left: 3em;
+    right: -15px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    overflow: -moz-scrollbars-none; 
+}
  .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
 </style>
 </head>
 <body class='typora-export os-windows'>
-<div id='write'  class=''><h1><a name="ma321---mathematics-in-contemporary-society" class="md-header-anchor"></a><span>MA321 - Mathematics in Contemporary Society</span></h1><p><span>List of course slides</span></p><ul><li><a href='Lesson01-Unit-5A.html'><span>Lesson 1</span></a></li><li><a href='Lesson02-Unit-5B.html'><span>Lesson 2</span></a></li><li><a href='Lesson03-Unit-5C.html'><span>Lesson 3</span></a></li><li><a href='Lesson04-Unit-5D.html'><span>Lesson 4</span></a></li><li><a href='Lesson05-Unit-5E.html'><span>Lesson 5</span></a></li><li><a href='Lesson06-Unit-6A.html'><span>Lesson 6</span></a></li></ul></div>
+<div id='write'  class=''><h1><a name="ma321---mathematics-in-contemporary-society" class="md-header-anchor"></a><span>MA321 - Mathematics in Contemporary Society</span></h1><p><span>List of course slides</span></p><ul><li><a href='Lesson01-Unit-5A.html'><span>Lesson 1</span></a></li><li><a href='Lesson02-Unit-5B.html'><span>Lesson 2</span></a></li><li><a href='Lesson03-Unit-5C.html'><span>Lesson 3</span></a></li><li><a href='Lesson04-Unit-5D.html'><span>Lesson 4</span></a></li><li><a href='Lesson05-Unit-5E.html'><span>Lesson 5</span></a></li><li><a href='Lesson06-Unit-6A.html'><span>Lesson 6</span></a></li><li><a href='Lesson07-Unit-6B.html'><span>Lesson 7</span></a></li><li><a href='Lesson08-Unit-6C.html'><span>Lesson 8</span></a></li><li><a href='Lesson09-Unit-6D.html'><span>Lesson 9</span></a></li></ul></div>
 </body>
 </html>

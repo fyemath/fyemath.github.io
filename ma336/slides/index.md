@@ -7,4 +7,6 @@ List of course slides
 - [Lesson 3](MA336-Lesson-3-Measure-Center-Spread.html)
 - [Lesson 4](MA336-Lesson-4-Linear-Relationship.html)
 - [Lesson 5](MA336-Lesson-5-Linear-Regression.html)
+- [Lesson 6](MA336-Lesson-6-Two-Way-Tables.html)
+- [Lesson 7](MA336-Lesson-7-Probability.html)
 
