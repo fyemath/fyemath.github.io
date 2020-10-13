@@ -13,20 +13,15 @@ h1, h2, h3 {
 
 .remark-slide-content {
   font-size: 24px;
+  overflow: hidden;
 }
 
 .title-slide {
-
   background-image: url('../QCC-logo.jpg');
-
   background-position: 95% 95%;
-
   background-size: 25%;
-
   background-color: white;
-
   text-shadow: none;
-
 }
 
 
@@ -35,24 +30,17 @@ h1, h2, h3 {
 }
 
 .remark-slide-content h1 {
-
   color: rgb(166, 204, 29); 
-
 }
 
 .remark-slide-content h2 {
-
   margin-top: 2%;
-
   margin-bottom: auto;
-
   color: rgb(166, 204, 29);
-
 }
 
 .title-slide h1 {
   margin-top: auto;
-
   color: rgb(13, 54, 146);
 }
 .title-slide h2 {
@@ -63,16 +51,12 @@ h1, h2, h3 {
   color: rgb(13, 54, 146); 
 }
 
-
 .left-column{
-
   height: 100%
-
 }
-.right-column{
-  
-  padding-top: 0px
 
+.right-column{
+  padding-top: 0px
 }
 
 .remark-inline-code{
@@ -108,7 +92,6 @@ h1, h2, h3 {
   padding-top: 0pt;
 }
 
-
 .row {
   display: flex;
   justify-content: top;
@@ -130,13 +113,21 @@ h1, h2, h3 {
   background-color: #f0faa6;
 }
 
-.embfr {
-    object-fit: contain; 
-    width: 100%; 
-    height: 85%;
-    /* -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0; */
-    border: 0;
+
+
+iframe {
+  max-height: 564px; /* slide size=1210 by 681*/
+  min-height: 282px;
+  border: 0px;
+  width: 100%;
+}
+
+.small{
+  font-size: 60%;
+}
+
+.footmark{
+  font-size: 50%;
+  bottom: 0;
+  position: absolute;
 }
