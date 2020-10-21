@@ -11,3 +11,6 @@ List of course slides
 - [Lesson 7](Lesson07-Unit-6B.html)
 - [Lesson 8](Lesson08-Unit-6C.html)
 - [Lesson 9](Lesson09-Unit-6D.html)
+- [Lesson 10](Lesson10-Unit-2A.html)
+- [Lesson 11](Lesson11-Unit-2B.html)
+- [Lesson 12](Lesson12-Unit-2C.html)
