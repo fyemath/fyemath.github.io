@@ -147,12 +147,6 @@ class: center, middle, inverse, title-slide
 
 
 
-class: center middle
-
-# Learning Goals
-
----
-
 ## Learning Goals for Probability and Probability Distribution
 
 - Demonstrate understanding of random variables
@@ -167,21 +161,28 @@ class: center middle
 
 - A **random variable**, usually written `\(X\)`, is a variable whose values are numerical quantities of possible outcomes a random experiment.
 
-- A **discrete random variable** takes on only a finite or countable number of distinct values.
+- A **discrete random variable** takes on only a finite or countable number of distinct values. For example,
 
-- A **continuous random variable** takes on values which form an interval of numbers.
+  - Rolling a fair dice, the number of dots on the top faces is a discrete random variables takes on the possible values: 1, 2, 3, ,4, 5, 6.
+  - Flipping a fair coin 10 times, the number of heads is a discrete random variable takes on the possible values: 1, 2, 3, ..., 10.
 
----
+- A **continuous random variable** takes on values which form an interval of numbers. For example,
 
-## Example: Random Variables
+  - The height of an randomly select 10 year-old boy in US is normally between 129 cm and 157 cm. So the height is a continuous random variable.
+  - The measure the voltage at an randomly electrical outlet normally is between 118 and 122. SO the measure of voltage is a continuous random variable.
 
-- Rolling a fair dice, the number of dots on the top faces is a discrete random variables takes on the possible values: 1, 2, 3, ,4, 5, 6.
 
-- Flipping a fair coin 10 times, the number of heads is a discrete random variable takes on the possible values: 1, 2, 3, ..., 10.
+&lt;!-- --- --&gt;
 
-- The height of an randomly select 10 year-old boy in US is normally between 129 cm and 157 cm. So the height is a continuous random variable
+&lt;!-- ## Example: Random Variables --&gt;
 
-- The measure the voltage at an randomly electrical outlet normally is between 118 and 122. SO the measure of voltage is a continuous random variable.
+&lt;!-- - Rolling a fair dice, the number of dots on the top faces is a discrete random variables takes on the possible values: 1, 2, 3, ,4, 5, 6. --&gt;
+
+&lt;!-- - Flipping a fair coin 10 times, the number of heads is a discrete random variable takes on the possible values: 1, 2, 3, ..., 10. --&gt;
+
+&lt;!-- - The height of an randomly select 10 year-old boy in US is normally between 129 cm and 157 cm. So the height is a continuous random variable --&gt;
+
+&lt;!-- - The measure the voltage at an randomly electrical outlet normally is between 118 and 122. SO the measure of voltage is a continuous random variable. --&gt;
 
 ---
 
@@ -190,8 +191,11 @@ class: center middle
 Classify each random variable as either discrete or continuous.
 
 1. The number of boys in a randomly selected three-child family.
+
 2. The temperature of a cup of coffee served at a restaurant.
+
 3. The number of math majors in randomly selected group of 10 students.
+
 4. The amount of rain recorded in a small town one day.
 
 ---
@@ -201,6 +205,7 @@ Classify each random variable as either discrete or continuous.
 Identify the set of possible values for each random variable. (Make a reasonable estimate based on experience, where necessary.)
 
 1. The sum of numbers on the top of two fair dice.
+
 2. The waiting time of a randomly selected customer at a restaurant.
 
 ---
@@ -212,8 +217,11 @@ Identify the set of possible values for each random variable. (Make a reasonable
 - A random variable `\(X\)` (discrete and continuous) always has a **cumulative distribution function**: `\(F_X(x)=P(X\leq x)\)` (= `\(\sum_{x_i\leq x} P(x_i)\)` if `\(X\)` is discrete).
 
 - Recall basic rules of probability:
+
   - `\(0\leq P(X=x)\leq 1\)`.
+  
   - the sum of all the probabilities is 1, that is `\(P(X\leq x_{max})=1\)`.
+  
   - In particular, `\(0\leq F_X(x)\leq 1\)`.
 
 - The probability distribution can be recovered from its cumulative distribution function.
@@ -254,11 +262,28 @@ A pair of fair dice is rolled. Let `\(X\)` denote the sum of the number of dots 
 
 ## Mean and Standard Deviation of a Discrete Random Variable
 
-- The **mean** `\(\mu\)` (also called the **expected value** `\(E(X)\)`) of a discrete random variable `\(X\)` is the number `$$\mu= E(X)=\sum xP(x).$$`
+- The the **expected value** `\(E(X)\)` (also called **mean* and denoted by `\(\mu\)`) of a discrete random variable `\(X\)` is the number `$$\mu=E(X)=\sum xP(x).$$`
 
-- The **variance** `\(\sigma^2\)` of a discrete random variable `\(X\)` is the number `$$\sigma^2=\sum (x-\mu)^2P(X).$$`
+- The **variance** `\(Var(X)\)` (also denoted by `\(\sigma^2\)`) of a discrete random variable `\(X\)` is the number `$$\sigma^2=Var(E)=\sum (x-\mu)^2P(X).$$`
 
 - The **standard deviation** `\(\sigma\)` of a discrete random variable `\(X\)` is the square root of its variance: `$$\sigma=\sqrt{\sum (x-\mu)^2P(X)}.$$`
+
+---
+
+## Some Properties of Expected Value (Optional)
+
+
+- The expected value of a linear combination two random variables `\(X\)` and `\(Y\)` is the linear combination of their expected values, that is `$$E(aX+bY)=aE(X)+bE(Y).$$`
+
+- The expected value in general is not multiplicative, that is `\(E(XY)\ne E(X)E(Y)\)`. 
+
+- If the two random variable `\(X\)` and `\(Y\)` are independent, then `$$E(XY)=E(X)E(Y).$$`
+
+- The variance can be computed using expected values:
+  `$$\mathrm{Var}(X)=E(X^{2})-(\operatorname {E} [X])^{2}.$$`
+
+- Let `\(X\)` and `\(Y\)` be two *independent* variables. Then the variance of a linear combination `\(aX+bY\)` equals
+`$$Var(aX+bY)=a^2Var(X)+b^2Var(Y)$$`
 
 ---
 
@@ -319,12 +344,6 @@ Source: [https://saylordotorg.github.io/text_introductory-statistics/s08-02-prob
 
 ---
 
-## Practice: Probability within one SD of a discrete probability distribution
-
-&lt;iframe src=&quot;https://www.myopenmath.com/embedq2.php?id=14762&amp;amp;seed=2020&amp;amp;showansafter&quot; width=&quot;100%&quot; height=&quot;560px&quot;&gt;&lt;/iframe&gt;
-
----
-
 ## Practice: The number of sales of new employees
 
 .pull-left[
@@ -348,6 +367,13 @@ A company tracks the number of sales new employees make each day during a 100-da
 | 6                 | 8                  |
 | 7                 | 2                  |
 ]
+
+
+---
+
+## Practice: Probability within one SD of a discrete probability distribution
+
+&lt;iframe src=&quot;https://www.myopenmath.com/embedq2.php?id=14762&amp;amp;seed=2020&amp;amp;showansafter&quot; width=&quot;100%&quot; height=&quot;560px&quot;&gt;&lt;/iframe&gt;
 
 ---
 
@@ -563,6 +589,23 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
   }
 })();</script>
+<script>(function(data, token) {
+  // data is an object of the form { path: base64 data }; we need to move base64
+  // data back to HTML nodes (e.g., into the 'src' attribute of <img>)
+  var i, s, d, el, els;
+  els = document.querySelectorAll('img[src^="' + token + '"]');
+  for (i = 0; i < els.length; i++) {
+    el = els[i]; s = el.src.replace(token, ''); d = data[s];
+    if (d) el.src = d;
+  }
+  els = document.querySelectorAll('div.remark-slide-content[style]');
+  for (i = 0; i < els.length; i++) {
+    el = els[i]; s = el.style.backgroundImage; if (!s) continue;
+    s = s.match(/^url\("?(.+?)"?\)$/); if (!s || s.length < 2) continue;
+    s = s[1].replace(token, ''); d = data[s];
+    if (d) el.style.backgroundImage = 'url("' + d + '")';
+  }
+})({}, 'data:image/png;base64,#');</script>
 
 <script>
 slideshow._releaseMath = function(el) {
