@@ -11,4 +11,9 @@ List of course slides
 - [Week 7](MA336-Week-7-Probability.html)
 - [Week 8](MA336-Week-8-Discrete-Random-Variables.html)
 - [Week 9](MA336-Week-9-Continuous-Random-Variables.html)
+- [Week 10](MA336-Week-10-Sampling-Distributions.html)
+- [Week 11](MA336-Week-11-Confidence-Intervals-Mean.html)
+- [Week 12](MA336-Week-12-Confidence-Intervals-Proportion.html)
+- [Week 13](MA336-Week-13-Hypothesis-Testing-Proportion.html)
+- [Week 14](MA336-Week-14-Hypothesis-Testing-Mean.html)
 
