@@ -14,6 +14,6 @@ List of course slides
 - [Week 10](MA336-Week-10-Sampling-Distributions.html)
 - [Week 11](MA336-Week-11-Confidence-Intervals-Mean.html)
 - [Week 12](MA336-Week-12-Confidence-Intervals-Proportion.html)
-- [Week 13](MA336-Week-13-Hypothesis-Testing-Proportion.html)
-- [Week 14](MA336-Week-14-Hypothesis-Testing-Mean.html)
+- [Week 13](MA336-Week-13-Concepts-of-Hypothesis-Testing.html)
+- [Week 14](MA336-Week-14-Hypothesis-Testing-Mean-Proportion.html)
 
