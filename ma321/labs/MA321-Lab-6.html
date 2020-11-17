@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>Lab-7</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+<title>MA321-Lab-6</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
@@ -450,21 +450,74 @@ p .md-image:only-child{
 }
 
 .twocols{
-    columns: 2;
+   column-count: 2; 
+   column-gap: 10px;
 }
 
+@media print, (overflow-block: paged) or (overflow-block: optional-paged)
+{
+  /* Move top-level headings to a new page on the right-hand side: */
+  h1
+  {
+    page-break-before: right; /* CSS 2 */
+    break-before: recto;      /* CSS 3+, 
+      also works for languages written and paginated right-to-left */
+  }
+  /* Override the previous ruleset for the very first heading: */
+  h1:first-of-type,
+  section > h1:first-child
+  {
+    page-break-before: avoid; /* CSS 2 */
+    break-before: avoid;      /* CSS 3+ */
+  }
+  /* Force second-level headings to begin in a new column or
+     possiblyon a new page if it was in the last of multiple columns otherwise: */
+  h2
+  {
+    break-before: column;
+  }
+  /* Headings should not be the last paragraph on a page: */
+  h1, h2, h3, h4, h5, h6
+  {
+    page-break-after: avoid;
+  }
+  /* Consecutive headings with deepening level should not be split across pages: */
+  h1+h2, h2+h3, h3+h4, h4+h5, h5+h6
+  {
+    page-break-before: avoid;
+  }
+}
+iframe::-webkit-scrollbar{
+  display: none;
+  width: 0px !important;
+  background: transparent;
+}
+
+iframe::-webkit-scrollbar-thumb {
+background: #fafafa;
+}
+
+iframe {
+    object-fit: contain;
+    /* position: absolute; */
+    width: 1080;
+    height: 600px;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    border: 0px;
+    left: 3em;
+    right: -15px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    overflow: -moz-scrollbars-none; 
+}
  .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
 </style>
 </head>
 <body class='typora-export os-windows'>
-<div id='write'  class=''><h1><a name="using-the-function-convert-to-convert-measurements-from-one-unit-to-another" class="md-header-anchor"></a><span>Using The Function Convert To Convert Measurements From One Unit To Another</span></h1><h2><a name="the-convert-function-in-excel" class="md-header-anchor"></a><span>The Convert Function in Excel.</span></h2><ul><li><span>By tying in </span><code>=convert(x,&quot;from_unit_y&quot;,&quot;to_unit_z&quot;)</code><span>, you will be converting the quantity x</span>
-<span>given in unit y to unit z. For example, typing </span><code>=convert(600,&quot;w&quot;,&quot;kw&quot;)</code><span> will give you the equivalent of</span>
-<span>600 watts in 0.6 kilowatts.</span>
-<span>A complete listing of measurement units that the convert function supports is available from Microsoft</span>
-<span>Office Support at </span><a href='https://support.office.com/en-us/article/convert-function-d785bef1-808e-4aac-bdcd-666c810f9af2' target='_blank' class='url'>https://support.office.com/en-us/article/convert-function-d785bef1-808e-4aac-bdcd-666c810f9af2</a></li></ul><h2><a name="multiply-numbers-in-a-cell" class="md-header-anchor"></a><span>Multiply Numbers In A Cell</span></h2><p><span>To do this task, use the </span><strong><span>*</span></strong><span> (asterisk) arithmetic operator.</span></p><p><span>For example, if you type </span><strong><span>=5</span><span>*</span><span>10</span></strong><span> in a cell, the cell displays the result, </span><strong><span>50</span></strong><span>.</span></p><p><span>In the above example, if 5 is in cell </span><strong><span>A1</span></strong><span> and 10 is in cell </span><strong><span>B1</span></strong><span>, you may also calculate the produce by </span><strong><span>=A1</span><span>*</span><span>B1</span></strong><span>.</span></p><h2><a name="divide-numbers-in-a-cell" class="md-header-anchor"></a><span>Divide Numbers In A Cell</span></h2><p><span>To do this task, use the </span><strong><span>/</span></strong><span> (forward slash) arithmetic operator.</span></p><p><span>For example, if you type </span><strong><span>=10/5</span></strong><span> in a cell, the cell displays </span><strong><span>2</span></strong><span>.</span></p><p><span>In the above example, if 5 is in cell </span><strong><span>A1</span></strong><span> and 10 is in cell </span><strong><span>B1</span></strong><span>, you may also calculate the produce by </span><strong><span>=B1/A1</span></strong><span>.</span></p><h2><a name="lab-assignment-6" class="md-header-anchor"></a><span>Lab Assignment 6</span></h2><ul><li><span>Convert 7 feet into inches</span></li><li><span>How many seconds are there in one year?</span></li><li><span>Convert 68 degrees Fahrenheit to Celsius</span></li><li><span>Convert 100 square feet into square meters</span></li><li><span>According to the U.S. Bureau of Labor Statistics, sanitation workers had an average yearly wage of</span>
-<span>$47,600. Calculate the average hourly wage for sanitation workers.</span>
-<span>Assume that sanitation workers generally work 40 hours a week, and there are 52 weeks in the year.</span></li><li><span>Assume regular unleaded fuel costs $4.00 per gallon. A Mercedes that uses unleaded fuel gets about 25</span>
-<span>miles per gallon.</span>
+<div id='write'  class=''><h1><a name="using-the-function-convert-to-convert-measurements-from-one-unit-to-another" class="md-header-anchor"></a><span>Using The Function Convert To Convert Measurements From One Unit To Another</span></h1><h2><a name="the-convert-function-in-excel" class="md-header-anchor"></a><span>The Convert Function in Excel.</span></h2><ul><li><p><span>By tying in </span><code>=convert(x,&quot;from_unit_y&quot;,&quot;to_unit_z&quot;)</code><span>, you will be converting the quantity x</span>
+<span>given in unit y to unit z.</span></p><p><span>For example, typing </span><code>=convert(600,&quot;w&quot;,&quot;kw&quot;)</code><span> will give you the equivalent of</span>
+<span>600 watts in 0.6 kilowatts.</span></p><p><span>A complete listing of measurement units that the convert function supports is available from Microsoft Office Support at </span><a href='https://support.office.com/en-us/article/convert-function-d785bef1-808e-4aac-bdcd-666c810f9af2' target='_blank' class='url'>https://support.office.com/en-us/article/convert-function-d785bef1-808e-4aac-bdcd-666c810f9af2</a></p></li></ul><h2><a name="multiply-numbers-in-a-cell" class="md-header-anchor"></a><span>Multiply Numbers In A Cell</span></h2><p><span>To do this task, use the </span><strong><span>*</span></strong><span> (asterisk) arithmetic operator.</span></p><p><span>For example, if you type </span><strong><span>=5</span><span>*</span><span>10</span></strong><span> in a cell, the cell displays the result, </span><strong><span>50</span></strong><span>.</span></p><p><span>In the above example, if 5 is in cell </span><strong><span>A1</span></strong><span> and 10 is in cell </span><strong><span>B1</span></strong><span>, you may also calculate the produce by </span><strong><span>=A1</span><span>*</span><span>B1</span></strong><span>.</span></p><h2><a name="divide-numbers-in-a-cell" class="md-header-anchor"></a><span>Divide Numbers In A Cell</span></h2><p><span>To do this task, use the </span><strong><span>/</span></strong><span> (forward slash) arithmetic operator.</span></p><p><span>For example, if you type </span><strong><span>=10/5</span></strong><span> in a cell, the cell displays </span><strong><span>2</span></strong><span>.</span></p><p><span>In the above example, if 5 is in cell </span><strong><span>A1</span></strong><span> and 10 is in cell </span><strong><span>B1</span></strong><span>, you may also calculate the produce by </span><strong><span>=B1/A1</span></strong><span>.</span></p><h2><a name="lab-assignment-6" class="md-header-anchor"></a><span>Lab Assignment 6</span></h2><ul><li><span>Convert 7 feet into inches</span></li><li><span>How many seconds are there in one year?</span></li><li><span>Convert 68 degrees Fahrenheit to Celsius</span></li><li><span>Convert 100 square feet into square meters</span></li><li><span>According to the U.S. Bureau of Labor Statistics, sanitation workers had an average yearly wage of </span><span>$</span><span>47,600. Calculate the average hourly wage for sanitation workers.</span>
+<span>Assume that sanitation workers generally work 40 hours a week, and there are 52 weeks in the year.</span></li><li><span>Assume regular unleaded fuel costs $4.00 per gallon. A Mercedes that uses unleaded fuel gets about 25 miles per gallon.</span>
 <span>How much money will the driver of the Mercedes spend on gas in one year if he drives 12,000 miles</span></li></ul></div>
 </body>
 </html>
