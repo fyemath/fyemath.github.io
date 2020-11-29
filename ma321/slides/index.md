@@ -19,4 +19,3 @@ List of course slides
 - [Lesson 15](Lesson15-Unit-11C.html)
 - [Lesson 16](Lesson16-Unit-9A.html)
 - [Lesson 17](Lesson17-Unit-6B.html)
-- 
